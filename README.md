@@ -1,4 +1,4 @@
-# Project-E-commerce-Business-Transaction-and-Crypto-Analysis-Project
+# Project-E-commerce-Business-Transaction-and-Crypto-Analysis
 
 ## Data Source
 Dataset available at:
