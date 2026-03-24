@@ -45,11 +45,11 @@ st.markdown("---")
 # ----------------------
 @st.cache_data
 def load_data():
-    return pd.read_csv("C:/Users/makwe/Desktop/app.py/clean_ecommerce_data.csv")
+    return pd.read_csv("clean_ecommerce_data.csv.gz")
 
 @st.cache_data
 def load_crypto():
-    return pd.read_csv("C:/Users/makwe/Desktop/app.py/crypto_data_API.csv")
+    return pd.read_csv("crypto_data_API.csv")
 
 df = load_data()
 df1 = load_crypto()
