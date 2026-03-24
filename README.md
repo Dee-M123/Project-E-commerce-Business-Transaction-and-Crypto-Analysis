@@ -86,7 +86,7 @@ Project-E-commerce-Business-Transaction-and-Crypto-Analysis/
 
 Open your browser and go to:
 
-    http://localhost:8501
+    http://localhost...
 
 ---
 
