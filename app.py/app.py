@@ -87,11 +87,13 @@ monthly_sales['Revenue_diff'] = monthly_sales['Revenue'].diff()
 
 # --- MAP ---
 df_map = df[~df['Country'].isin(['Unspecified', 'European Community'])]
-country_revenue = df_map.groupby('Country')['Revenue'].sum().reset_index()
-
 country_revenue['Tier'] = pd.qcut(
-    tier_order = ['Low', 'Medium', 'High', 'Top']
+    country_revenue['Revenue'],
+    q=4,
+    labels=['Low', 'Medium', 'High', 'Top']
+)
 
+tier_order = ['Low', 'Medium', 'High', 'Top']
 country_revenue['Tier'] = pd.Categorical(
     country_revenue['Tier'],
     categories=tier_order,
