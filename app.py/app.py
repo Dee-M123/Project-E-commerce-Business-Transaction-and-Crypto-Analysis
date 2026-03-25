@@ -90,23 +90,12 @@ df_map = df[~df['Country'].isin(['Unspecified', 'European Community'])]
 country_revenue = df_map.groupby('Country')['Revenue'].sum().reset_index()
 
 country_revenue['Tier'] = pd.qcut(
-    country_revenue['Revenue'],
-    q=4,
-    labels=['Low', 'Medium', 'High', 'Top']
-)
+    tier_order = ['Low', 'Medium', 'High', 'Top']
 
-fig_map = px.choropleth(
-    country_revenue,
-    locations='Country',
-    locationmode='country names',
-    color='Tier',
-    color_discrete_map={
-        'Low': '#D6EAF8',
-        'Medium': '#5DADE2',
-        'High': '#F5B041',
-        'Top': '#E74C3C'
-    },
-    title='Revenue Distribution by Country'
+country_revenue['Tier'] = pd.Categorical(
+    country_revenue['Tier'],
+    categories=tier_order,
+    ordered=True
 )
 
 # --- CRYPTO ---
