@@ -106,6 +106,19 @@ country_revenue['Tier'] = pd.Categorical(
     ordered=True
 )
 
+fig_map = px.choropleth(
+    country_revenue,
+    locations='Country',
+    locationmode='country names',
+    color='Tier',
+    color_discrete_map={
+        'Low': '#D6EAF8',
+        'Medium': '#5DADE2',
+        'High': '#F5B041',
+        'Top': '#E74C3C'
+    },
+    title='Revenue Distribution by Country'
+)
 # --- CRYPTO ---
 df1['date'] = pd.to_datetime(df1['date'])
 df1 = df1.sort_values(['coin', 'date'])
