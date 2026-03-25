@@ -111,6 +111,7 @@ fig_map = px.choropleth(
     locations='Country',
     locationmode='country names',
     color='Tier',
+    category_orders={'Tier': ['Low', 'Medium', 'High', 'Top']},  
     color_discrete_map={
         'Low': '#D6EAF8',
         'Medium': '#5DADE2',
@@ -119,6 +120,7 @@ fig_map = px.choropleth(
     },
     title='Revenue Distribution by Country'
 )
+
 # --- CRYPTO ---
 df1['date'] = pd.to_datetime(df1['date'])
 df1 = df1.sort_values(['coin', 'date'])
